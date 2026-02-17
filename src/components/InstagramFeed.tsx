@@ -1,31 +1,25 @@
 import { useEffect, useRef } from 'react';
 import { Instagram } from 'lucide-react';
 
-const INSTAGRAM_POSTS = [
-  'https://www.instagram.com/p/DGHKZrOSqmk/',
-  'https://www.instagram.com/p/DGEeaJdyV5I/',
-  'https://www.instagram.com/p/DGBz2n-S3KH/',
-];
-
 const INSTAGRAM_PROFILE = 'https://www.instagram.com/highqtallow/';
+const LIGHTWIDGET_SRC =
+  'https://lightwidget.com/widgets/cbcd6ee699b05fc8ba4b98473398ef17.html';
 
 export default function InstagramFeed() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const scriptLoaded = useRef(false);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.instagram.com/embed.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.instgrm) {
-        window.instgrm.Embeds.process();
-      }
-    };
-    document.body.appendChild(script);
+    if (scriptLoaded.current) return;
+    if (document.querySelector('script[src="https://cdn.lightwidget.com/widgets/lightwidget.js"]')) {
+      scriptLoaded.current = true;
+      return;
+    }
 
-    return () => {
-      document.body.removeChild(script);
-    };
+    const script = document.createElement('script');
+    script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    scriptLoaded.current = true;
   }, []);
 
   return (
@@ -46,32 +40,19 @@ export default function InstagramFeed() {
           </a>
         </div>
 
-        <div
-          ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {INSTAGRAM_POSTS.map((url) => (
-            <div key={url} className="instagram-embed-wrapper overflow-hidden rounded-2xl bg-white shadow-sm">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-captioned
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-                style={{
-                  background: '#FFF',
-                  border: 0,
-                  borderRadius: '16px',
-                  margin: 0,
-                  maxWidth: '100%',
-                  minWidth: '100%',
-                  padding: 0,
-                  width: '100%',
-                }}
-              >
-                <a href={url} target="_blank" rel="noopener noreferrer" />
-              </blockquote>
-            </div>
-          ))}
+        <div className="w-full overflow-hidden">
+          <iframe
+            src={LIGHTWIDGET_SRC}
+            scrolling="no"
+            allowTransparency={true}
+            className="lightwidget-widget"
+            style={{
+              width: '100%',
+              border: 0,
+              overflow: 'hidden',
+            }}
+            title="Instagram Feed"
+          />
         </div>
       </div>
     </section>
