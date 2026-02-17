@@ -1,0 +1,50 @@
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import BrandPromise from './components/BrandPromise';
+import BrandIntro from './components/BrandIntro';
+import ProductShowcase from './components/ProductShowcase';
+import CallToAction from './components/CallToAction';
+import Footer from './components/Footer';
+import ProductsPage from './pages/ProductsPage';
+import AboutPage from './pages/AboutPage';
+import WhereToBuyPage from './pages/WhereToBuyPage';
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+import ShopComingSoonPage from './pages/ShopComingSoonPage';
+import CookieConsent from './components/CookieConsent';
+
+function HomePage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <Hero />
+      <BrandPromise />
+      <BrandIntro />
+      <ProductShowcase />
+      <CallToAction />
+      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/where-to-buy" element={<WhereToBuyPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        <Route path="/shop" element={<ShopComingSoonPage />} />
+      </Routes>
+      <CookieConsent />
+    </>
+  );
+}
+
+export default App;
