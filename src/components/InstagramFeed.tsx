@@ -3,7 +3,7 @@ import { Instagram } from 'lucide-react';
 
 const INSTAGRAM_PROFILE = 'https://www.instagram.com/highqtallow/';
 const LIGHTWIDGET_SRC =
-  'https://lightwidget.com/widgets/cbcd6ee699b05fc8ba4b98473398ef17.html';
+  'https://lightwidget.com/widgets/8a9c7aead6325537b9bc9dd1297db966.html';
 
 export default function InstagramFeed() {
   const scriptLoaded = useRef(false);
