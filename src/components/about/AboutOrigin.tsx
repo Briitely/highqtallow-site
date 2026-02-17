@@ -65,8 +65,8 @@ export default function AboutOrigin() {
               />
             </div>
             <p className="font-body text-sm text-midnight/50 mt-4 text-center italic">
-              The proof is in the tallow&nbsp;&mdash; left foot treated with
-              Say No to Crack, right foot untreated.
+              The proof is in the tallow&nbsp;&mdash; one foot treated with
+              Say No to Crack, one foot untreated.
             </p>
           </div>
         </div>

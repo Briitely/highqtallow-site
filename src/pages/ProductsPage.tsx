@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import ProductsHero from '../components/ProductsHero';
 import ProductTeaser from '../components/ProductTeaser';
 import FAQ from '../components/FAQ';
+import InstagramFeed from '../components/InstagramFeed';
 import Footer from '../components/Footer';
 
 export default function ProductsPage() {
@@ -16,6 +17,7 @@ export default function ProductsPage() {
       <ProductsHero />
       <ProductTeaser />
       <FAQ />
+      <InstagramFeed />
       <Footer />
     </div>
   );

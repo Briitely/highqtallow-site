@@ -56,8 +56,8 @@ export default function AboutGrowth() {
                 />
               </div>
               <p className="font-body text-sm text-midnight/50 mt-4 text-center italic">
-                Where it all began&nbsp;&mdash; the original Say No to Crack
-                packaging.
+                The proof is in the tallow&nbsp;&mdash; one foot treated with
+                Say No to Crack, one foot untreated.
               </p>
             </div>
           </div>

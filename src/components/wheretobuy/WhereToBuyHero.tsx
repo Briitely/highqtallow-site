@@ -41,9 +41,19 @@ export default function WhereToBuyHero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            High Q Tallow is proudly stocked by local retailers — because
-            supporting small shops matters more to us than selling everywhere.
-            No shop nearby? We've got you covered — click below to order online.
+            High Q Tallow is proudly stocked by independent retailers across
+            Alberta and beyond. We believe great products belong in great local
+            shops&nbsp;&mdash; and we're committed to supporting the small
+            businesses that strengthen our communities.
+          </p>
+
+          <p
+            className={`font-body text-lg md:text-xl text-white/90 mt-4 max-w-2xl leading-relaxed transition-all duration-1000 delay-400 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            Don't see a shop near you? You can always order directly from us
+            online.
           </p>
 
           <div

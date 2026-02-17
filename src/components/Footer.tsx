@@ -30,15 +30,17 @@ export default function Footer() {
               <img
                 src={logoWhite}
                 alt="High Q Bison Tallow"
-                className="h-10 w-auto mb-5"
+                className="h-14 w-auto mb-5"
               />
             </Link>
             <p className="font-body text-sm text-white/40 leading-relaxed">
-              Luxury. Nature. Intelligence. Wit.
+              Luxurious. Natural. Traditional.
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.instagram.com/highqtallow/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-[10px] bg-white/8 hover:bg-lavender/20 flex items-center justify-center transition-all duration-300 group"
                 aria-label="Instagram"
               >
