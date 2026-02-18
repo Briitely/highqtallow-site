@@ -50,7 +50,7 @@ export default function Navbar({ forceOpaque = false }: NavbarProps) {
           <img
             src={logoWhite}
             alt="High Q Bison Tallow"
-            className="h-14 md:h-16 w-auto"
+            className="w-[100px] h-[100px] object-contain"
           />
         </Link>
 
