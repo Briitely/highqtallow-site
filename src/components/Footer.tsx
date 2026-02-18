@@ -61,25 +61,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div class="flex flex-col items-center justify-end text-center lg:items-center lg:text-center">
-
-  <!-- Centered Leaf + Title -->
-  <div class="flex items-center justify-center gap-3 mb-2">
-    <!-- Maple Leaf -->
+          <div className="flex flex-col items-center justify-end text-center lg:items-center lg:text-center">
+  {/* Centered Leaf + Title */}
+  <div className="flex items-center justify-center gap-3 mb-2">
+    {/* Maple Leaf */}
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#940f18" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L14.5 8H21L15.5 12L18 20L12 15.5L6 20L8.5 12L3 8H9.5L12 2Z"/>
+      <path d="M12 2L14.5 8H21L15.5 12L18 20L12 15.5L6 20L8.5 12L3 8H9.5L12 2Z" />
     </svg>
 
-    <h4 class="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white">
+    <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white">
       Proud Product Of
     </h4>
   </div>
 
-  <!-- Location -->
-  <p class="font-body text-sm text-white/50 whitespace-nowrap">
+  {/* Location */}
+  <p className="font-body text-sm text-white/50 whitespace-nowrap">
     Lethbridge, Alberta, Canada
   </p>
-
 </div>
               </div>
             </div>
