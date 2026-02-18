@@ -14,6 +14,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import ShopComingSoonPage from './pages/ShopComingSoonPage';
 import CookieConsent from './components/CookieConsent';
+import FloatingSocial from './components/FloatingSocial';
 
 function HomePage() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
         <Route path="/shop" element={<ShopComingSoonPage />} />
       </Routes>
+      <FloatingSocial />
       <CookieConsent />
     </>
   );
