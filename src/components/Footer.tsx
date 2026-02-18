@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import logoWhite from '../assets/HighQ_BisonTallow_White_Transparent_(1).png';
 
 const NAVIGATE_LINKS = [
-  { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
   { label: 'Products', to: '/products' },
   { label: 'Where to Buy', to: '/where-to-buy' },
@@ -12,7 +11,7 @@ const NAVIGATE_LINKS = [
 function MapleLeaf() {
   return (
     <svg
-      className="w-6 h-6 flex-shrink-0 mt-[1px]"
+      className="w-7 h-7 flex-shrink-0 mt-[2px]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 375 375"
       aria-hidden="true"
@@ -27,8 +26,18 @@ function MapleLeaf() {
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-midnight pt-10 pb-6">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer id="contact" className="bg-midnight pt-10 pb-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
+        <a
+          href="https://www.instagram.com/highqtallow/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:flex absolute right-6 top-10 w-10 h-10 rounded-[10px] bg-white/8 hover:bg-lavender/20 items-center justify-center transition-all duration-300 group"
+          aria-label="Instagram"
+        >
+          <Instagram size={18} className="text-white/60 group-hover:text-lavender" />
+        </a>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-8 border-b border-white/10 lg:items-end">
           <div className="flex flex-col">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
@@ -41,17 +50,6 @@ export default function Footer() {
             <p className="font-body text-sm text-white/40 leading-relaxed">
               Luxurious. Natural. Traditional.
             </p>
-            <div className="mt-4 flex items-start gap-2">
-              <MapleLeaf />
-              <div className="leading-tight">
-                <div className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Proud Product Of
-                </div>
-                <div className="font-body text-sm text-white/40">
-                  Lethbridge, Alberta, Canada
-                </div>
-              </div>
-            </div>
           </div>
 
           <div>
@@ -73,21 +71,34 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">
-              For Retailers
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/contact"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="font-body text-sm transition-colors duration-300 text-lavender/80 hover:text-lavender font-medium"
-                >
-                  Sell Our Products
-                </Link>
-              </li>
-            </ul>
+          <div className="lg:col-span-1">
+            <div className="flex items-start gap-2">
+              <MapleLeaf />
+              <div className="leading-tight">
+                <div className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                  Proud Product Of
+                </div>
+                <div className="font-body text-sm lg:text-[13px] text-white/40 whitespace-nowrap">
+                  Lethbridge, Alberta, Canada
+                </div>
+              </div>
+            </div>
+            <div className="mt-5">
+              <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">
+                For Retailers
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    to="/contact"
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="font-body text-sm transition-colors duration-300 text-lavender/80 hover:text-lavender font-medium"
+                  >
+                    Sell Our Products
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div>
@@ -114,17 +125,6 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="flex items-center gap-4 mt-5">
-              <a
-                href="https://www.instagram.com/highqtallow/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-[10px] bg-white/8 hover:bg-lavender/20 flex items-center justify-center transition-all duration-300 group"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} className="text-white/50 group-hover:text-lavender" />
-              </a>
-            </div>
           </div>
         </div>
 
