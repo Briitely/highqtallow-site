@@ -8,10 +8,10 @@ const NAVIGATE_LINKS = [
   { label: 'Where to Buy', to: '/where-to-buy' },
 ];
 
-function MapleLeaf() {
+function MapleLeaf({ className = '' }: { className?: string }) {
   return (
     <svg
-      className="w-6 h-6 flex-shrink-0"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 375 375"
       aria-hidden="true"
@@ -28,8 +28,8 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-midnight pt-10 pb-6 relative">
       <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-x-16 pb-8 border-b border-white/10 lg:items-end">
-          <div className="flex flex-col">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0 lg:gap-x-16 pb-8 border-b border-white/10 lg:items-end">
+          <div className="min-w-0 flex flex-col">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img
                 src={logoWhite}
@@ -42,7 +42,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">
               Navigate
             </h4>
@@ -61,14 +61,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="flex flex-col items-center justify-center gap-1 mb-2">
-              <MapleLeaf />
-              <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <MapleLeaf className="w-[18px] h-[18px] flex-shrink-0" />
+              <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white whitespace-nowrap">
                 Proud Product Of
               </h4>
             </div>
-            <p className="font-body text-[13px] text-white/50 whitespace-nowrap">
+            <p className="mt-2 font-body text-[13px] text-white/50 whitespace-nowrap">
               Lethbridge, Alberta, Canada
             </p>
             <div className="mt-5">
@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h4 className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">
               Get in Touch
             </h4>
