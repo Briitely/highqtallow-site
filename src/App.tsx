@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,9 +13,16 @@ import WhereToBuyPage from './pages/WhereToBuyPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
-import ShopComingSoonPage from './pages/ShopComingSoonPage';
 import CookieConsent from './components/CookieConsent';
 import FloatingSocial from './components/FloatingSocial';
+import { SHOP_URL } from './config/shop';
+
+function ExternalRedirect({ url }: { url: string }) {
+  useEffect(() => {
+    window.location.href = url;
+  }, [url]);
+  return null;
+}
 
 function HomePage() {
   return (
@@ -41,7 +49,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
-        <Route path="/shop" element={<ShopComingSoonPage />} />
+        <Route path="/shop" element={<ExternalRedirect url={SHOP_URL} />} />
       </Routes>
       <FloatingSocial />
       <CookieConsent />

@@ -83,13 +83,13 @@ export default function Navbar({ forceOpaque = false }: NavbarProps) {
         </div>
 
         <div className="hidden lg:block">
-          <Link
-            to={SHOP_URL}
+          <a
+            href={SHOP_URL}
             className="inline-flex items-center gap-2 bg-lavender hover:bg-lavender-dark text-midnight font-body text-sm font-semibold px-6 py-2.5 rounded-[10px] transition-all duration-300 hover:shadow-lg hover:shadow-lavender/25"
           >
             <ShoppingBag size={16} />
             Shop
-          </Link>
+          </a>
         </div>
 
         <button
@@ -153,14 +153,14 @@ export default function Navbar({ forceOpaque = false }: NavbarProps) {
             >
               Sell Our Products
             </Link>
-            <Link
-              to={SHOP_URL}
+            <a
+              href={SHOP_URL}
               onClick={() => setMobileOpen(false)}
               className="inline-flex items-center gap-2 bg-lavender hover:bg-lavender-dark text-midnight font-body text-base font-semibold px-8 py-3 rounded-[10px] transition-all duration-300 mt-4"
             >
               <ShoppingBag size={18} />
               Shop
-            </Link>
+            </a>
           </div>
         </div>,
         document.body

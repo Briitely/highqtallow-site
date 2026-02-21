@@ -1,5 +1,4 @@
 import { ShoppingBag, Truck, Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { SHOP_URL } from '../../config/shop';
 
 export default function OnlineOrderingCTA() {
@@ -54,13 +53,13 @@ export default function OnlineOrderingCTA() {
         </div>
 
         <div className="text-center">
-          <Link
-            to={SHOP_URL}
+          <a
+            href={SHOP_URL}
             className="inline-flex items-center justify-center gap-2 bg-lavender hover:bg-lavender-dark text-midnight font-body text-base font-semibold px-10 py-4 rounded-[12px] transition-all duration-300 hover:shadow-xl hover:shadow-lavender/30"
           >
             <ShoppingBag size={20} />
             Shop Online Now
-          </Link>
+          </a>
           <p className="font-body text-sm text-white/60 mt-4">
             Free shipping on orders over $100
           </p>

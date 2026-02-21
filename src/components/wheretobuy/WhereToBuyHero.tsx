@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { ShoppingBag } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import headerBg from '../../assets/ChatGPT_Image_Feb_16,_2026,_04_38_07_PM.png';
 import { SHOP_URL } from '../../config/shop';
 
@@ -61,13 +60,13 @@ export default function WhereToBuyHero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <Link
-              to={SHOP_URL}
+            <a
+              href={SHOP_URL}
               className="inline-flex items-center justify-center gap-2 bg-lavender hover:bg-lavender-dark text-midnight font-body text-sm font-semibold px-8 py-3.5 rounded-[10px] transition-all duration-300 hover:shadow-xl hover:shadow-lavender/20"
             >
               <ShoppingBag size={16} />
               Shop Online
-            </Link>
+            </a>
           </div>
         </div>
       </div>

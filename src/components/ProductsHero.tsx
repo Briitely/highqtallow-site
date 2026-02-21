@@ -59,8 +59,8 @@ export default function ProductsHero() {
               <MapPin size={16} />
               Find a Retailer
             </Link>
-            <Link
-              to={SHOP_URL}
+            <a
+              href={SHOP_URL}
               className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:border-white text-white font-body text-sm font-semibold px-8 py-3.5 rounded-[10px] transition-all duration-300 hover:bg-white/10 group"
             >
               Buy Now
@@ -68,7 +68,7 @@ export default function ProductsHero() {
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
