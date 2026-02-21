@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SHOP_URL } from '../config/shop';
 import headerBg from '../assets/ChatGPT_Image_Feb_15,_2026,_01_55_56_PM.png';
 
 export default function Hero() {
@@ -66,8 +65,8 @@ export default function Hero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <a
-              href={SHOP_URL}
+            <Link
+              to="/products"
               className="inline-flex items-center justify-center gap-2 bg-lavender hover:bg-lavender-dark text-midnight font-body text-sm font-semibold px-8 py-3.5 rounded-[10px] transition-all duration-300 hover:shadow-xl hover:shadow-lavender/20 group"
             >
               Explore Products
@@ -75,7 +74,7 @@ export default function Hero() {
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-            </a>
+            </Link>
             <Link
               to="/where-to-buy"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:border-white text-white font-body text-sm font-semibold px-8 py-3.5 rounded-[10px] transition-all duration-300 hover:bg-white/10"
