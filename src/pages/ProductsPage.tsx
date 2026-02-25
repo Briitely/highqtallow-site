@@ -39,7 +39,7 @@ export default function ProductsPage() {
         <Navbar />
         <main>
           <ProductsHero />
-          <ProductTeaser />
+          {<ProductTeaser />}
           {<FAQ />}
            {/* <InstagramFeed /> */}
         </main>
