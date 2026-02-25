@@ -41,7 +41,7 @@ export default function ProductsPage() {
           <ProductsHero />
           <ProductTeaser />
           <FAQ />
-          <InstagramFeed />
+           {/* <InstagramFeed /> */}
         </main>
         <Footer />
       </div>
