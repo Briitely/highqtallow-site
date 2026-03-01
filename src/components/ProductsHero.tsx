@@ -33,7 +33,7 @@ export default function ProductsHero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            High Q<span className="text-[0.6em] align-super font-semibold tracking-tight leading-none">&trade;</span> Bison Tallow
+            <span className="whitespace-nowrap">High Q<span className="text-[0.6em] align-super font-semibold tracking-tight leading-none">&trade;</span></span> Bison Tallow
           </p>
           <h1
             className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] transition-all duration-1000 ${
