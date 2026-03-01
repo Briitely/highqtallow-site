@@ -1,6 +1,6 @@
 import { Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoWhite from '../assets/HighQ_BisonTallow_White_Transparent_(1).png';
+import logo from '../assets/ChatGPT_Image_Mar_1,_2026,_08_58_03_AM.png';
 
 const NAVIGATE_LINKS = [
   { label: 'About Us', to: '/about' },
@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="min-w-0 flex flex-col">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
               <img
-                src={logoWhite}
+                src={logo}
                 alt="High Q Bison Tallow"
-                className="w-[80px] h-[80px] object-contain mb-4"
+                className="w-[80px] h-[80px] object-contain mb-4 brightness-0 invert"
               />
             </Link>
             <p className="font-body text-sm text-white/40 leading-relaxed whitespace-nowrap">
