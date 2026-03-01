@@ -50,7 +50,7 @@ export default function Hero() {
             }`}
           >
             Born from the land, perfected by science, and stubbornly better
-            than beef. Small-batch skincare that's unapologetically High Q.
+            than beef. Small-batch skincare that's unapologetically High Q<span className="text-[0.6em] align-super font-semibold tracking-tight leading-none">&trade;</span>.
           </p>
 
           <p

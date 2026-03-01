@@ -22,7 +22,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Can I use these balms on my face?',
     answer:
-      'Absolutely. All High Q balms are formulated for facial use and melt effortlessly into the skin. They\u2019re suitable for all skin types, including oily and sensitive skin.',
+      'Absolutely. All High Q\u2122 balms are formulated for facial use and melt effortlessly into the skin. They\u2019re suitable for all skin types, including oily and sensitive skin.',
   },
   {
     question: 'How do I use the balms?',

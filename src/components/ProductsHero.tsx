@@ -28,6 +28,13 @@ export default function ProductsHero() {
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32">
         <div className="max-w-3xl">
+          <p
+            className={`font-body text-xs font-semibold uppercase tracking-[0.25em] text-white/60 mb-3 transition-all duration-1000 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            High Q<span className="text-[0.6em] align-super font-semibold tracking-tight leading-none">&trade;</span> Bison Tallow
+          </p>
           <h1
             className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] transition-all duration-1000 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
