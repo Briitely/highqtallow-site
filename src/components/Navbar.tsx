@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoWhite from '../assets/Tallow_Balm_Front_Labels_(6).png';
+import logoWhite from '../assets/HighQ_BisonTallow_White_Transparent_(1).png';
 import { SHOP_URL } from '../config/shop';
 
 interface NavLink {

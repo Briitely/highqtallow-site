@@ -10,7 +10,7 @@ export default function AboutGrowth() {
       <div className="max-w-6xl mx-auto px-6">
         <div ref={ref1} className="scroll-reveal mb-12">
           <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-olive-earth/60 mb-4 max-w-3xl mx-auto">
-            From Experiments to High Q<span className="text-[0.6em] align-super font-semibold tracking-tight">&trade;</span>
+            From Experiments to High Q
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-midnight leading-tight max-w-3xl mx-auto">
             What started as a personal experiment slowly grew into its own brand.
