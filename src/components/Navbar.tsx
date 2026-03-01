@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/ChatGPT_Image_Mar_1,_2026,_08_58_03_AM.png';
+import logoWhite from '../assets/Tallow_Balm_Front_Labels_(6).png';
 import { SHOP_URL } from '../config/shop';
 
 interface NavLink {
@@ -48,9 +48,9 @@ export default function Navbar({ forceOpaque = false }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between relative z-10">
         <Link to="/" className="flex-shrink-0">
           <img
-            src={logo}
+            src={logoWhite}
             alt="High Q Bison Tallow"
-            className="w-[100px] h-[100px] object-contain brightness-0 invert"
+            className="w-[100px] h-[100px] object-contain"
           />
         </Link>
 
