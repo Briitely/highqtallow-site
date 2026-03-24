@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BrandPromise from './components/BrandPromise';
@@ -53,6 +54,7 @@ function App() {
       </Routes>
       <FloatingSocial />
       <CookieConsent />
+      <Analytics />
     </>
   );
 }
