@@ -33,7 +33,7 @@ export default function SellOurProduct() {
             Sell Our Product
           </h2>
           <p className="font-body text-base md:text-lg text-midnight/60 mt-4 max-w-2xl mx-auto leading-relaxed">
-            Interested in carrying High Q Bison Tallow in your store? Fill out the
+            Interested in carrying High Q™ Bison Tallow in your store? Fill out the
             form below and we'll be in touch.
           </p>
         </div>

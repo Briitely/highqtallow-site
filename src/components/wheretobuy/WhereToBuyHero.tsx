@@ -40,7 +40,7 @@ export default function WhereToBuyHero() {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            High Q Tallow is proudly stocked by independent retailers across
+            High Q™ Tallow is proudly stocked by independent retailers across
             Alberta and beyond. We believe great products belong in great local
             shops&nbsp;&mdash; and we're committed to supporting the small
             businesses that strengthen our communities.
