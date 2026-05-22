@@ -142,12 +142,13 @@ export default function StoreLocator() {
           </h2>
         </div>
 
-        <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch(e)}
               placeholder="Search by city, or store name"
               className="w-full px-6 py-4 pr-28 rounded-[12px] border-2 border-olive-earth/20 focus:border-lavender focus:outline-none font-body text-base text-midnight placeholder:text-midnight/40 transition-colors"
             />
@@ -162,7 +163,8 @@ export default function StoreLocator() {
                 </button>
               )}
               <button
-                type="submit"
+                type="button"
+                onClick={handleSearch}
                 disabled={searching || !searchQuery.trim()}
                 className="bg-lavender hover:bg-lavender-dark text-midnight p-3 rounded-[8px] transition-colors disabled:opacity-50"
               >
@@ -174,7 +176,7 @@ export default function StoreLocator() {
               </button>
             </div>
           </div>
-        </form>
+        </div>
 
         <div id="map-container" className="mb-12">
           <MapView
