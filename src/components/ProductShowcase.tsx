@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import heroImage from '../assets/complete_product_hero.png';
-import { SHOP_URL } from '../config/shop';
 
 export default function ProductShowcase() {
   const ref = useScrollReveal<HTMLDivElement>();
@@ -27,8 +27,8 @@ export default function ProductShowcase() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <a
-              href={SHOP_URL}
+            <Link
+              to="/products"
               className="inline-flex items-center gap-2 bg-white hover:bg-cream text-midnight font-body text-sm md:text-base font-semibold px-8 md:px-10 py-3.5 md:py-4 rounded-[10px] transition-all duration-300 hover:shadow-2xl hover:scale-105 group/btn"
             >
               View All Products
@@ -36,7 +36,7 @@ export default function ProductShowcase() {
                 size={16}
                 className="transition-transform duration-300 group-hover/btn:translate-x-1"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
