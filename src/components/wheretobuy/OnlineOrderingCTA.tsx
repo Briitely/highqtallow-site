@@ -61,7 +61,7 @@ export default function OnlineOrderingCTA() {
             Shop Online Now
           </a>
           <p className="font-body text-sm text-white/60 mt-4">
-            Free shipping on orders over $75
+            Free shipping on orders over $85
           </p>
         </div>
       </div>
