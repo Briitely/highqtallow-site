@@ -143,19 +143,21 @@ export default function StoreLocator() {
         </div>
 <div className="max-w-2xl mx-auto mb-12">
   <div className="relative">
-    <input
-      type="text"
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      onKeyDown={(e) => e.key === 'Enter' && handleSearch(e as any)}
+   <input
+  type="text"
+  data-exclude-from-tracking="true"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  onKeyDown={(e) => e.key === 'Enter' && handleSearch(e as any)}
       placeholder="Search by city, or store name"
       className="w-full px-6 py-4 pr-28 rounded-[12px] border-2 border-olive-earth/20 focus:border-lavender focus:outline-none font-body text-base text-midnight placeholder:text-midnight/40 transition-colors"
     />
     <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
       {(searchQuery || isSearched) && (
         <button
-          type="button"
-          onClick={handleClear}
+  type="button"
+  data-exclude-from-tracking="true"
+  onClick={handleSearch}
           className="text-midnight/40 hover:text-midnight p-2 rounded-[8px] transition-colors"
         >
           <X size={18} />
