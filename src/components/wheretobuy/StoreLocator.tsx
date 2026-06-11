@@ -6,6 +6,7 @@ import { geocodeCity } from '../../utils/geocode';
 import { haversineDistance } from '../../utils/haversine';
 import { parseCSV } from '../../utils/csv';
 import type { StoreLocation } from '../../types/store';
+declare function gtag(...args: any[]): void;
 
 const STORES_CSV_URL =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vR6MLPeWdVRJMJxk-8ND3Z-N0zuHcFZT_kZEwqOs31oYe7Rkeu0y9fkltaSsxH9TYPlcQxUkHxDTBrX/pub?gid=0&single=true&output=csv';
@@ -52,6 +53,10 @@ export default function StoreLocator() {
     e.preventDefault();
     const query = searchQuery.trim();
     if (!query || allStores.length === 0) return;
+    // GA4 custom event
+window.gtag('event', 'store_search', {
+  search_term: query,
+});
 
     setSearching(true);
     setNoNearbyMessage(null);
