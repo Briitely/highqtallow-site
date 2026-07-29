@@ -40,7 +40,7 @@ export function parseCSV(csvText: string): StoreLocation[] {
     }
     values.push(currentValue.trim());
 
-    if (values.length < 7) continue;
+    if (values.length < 13) continue;
 
     const name = values[0]?.trim() || '';
     const address = values[1]?.trim() || '';
@@ -50,15 +50,32 @@ export function parseCSV(csvText: string): StoreLocation[] {
     const lat = parseFloat(values[5]);
     const lng = parseFloat(values[6]);
 
-    const rawPhone = values[7]?.trim() || '';
-    const rawWebsite = values[8]?.trim() || '';
+  const rawPhone = values[7]?.trim() || '';
+const rawWebsite = values[8]?.trim() || '';
+const wholesaleStatus = values[12]?.trim() || '';
 
-    const phone = formatPhone(rawPhone);
-    const website = rawWebsite || undefined;
+const phone = formatPhone(rawPhone);
+const website = rawWebsite || undefined;
 
-    if (!isNaN(lat) && !isNaN(lng) && name) {
-      stores.push({ name, address, city, province, postalCode, lat, lng, phone, website });
-    }
+// Only active wholesale retailers should appear on the public map
+if (
+  !isNaN(lat) &&
+  !isNaN(lng) &&
+  name &&
+  wholesaleStatus.toLowerCase() === 'active'
+) {
+  stores.push({
+    name,
+    address,
+    city,
+    province,
+    postalCode,
+    lat,
+    lng,
+    phone,
+    website
+  });
+}
   }
 
   return stores;
