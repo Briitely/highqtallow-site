@@ -8,7 +8,7 @@ import { parseCSV } from '../../utils/csv';
 import type { StoreLocation } from '../../types/store';
 
 const STORES_CSV_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlbnHlajTB6BmZ8HF8TL5PKU_KuXnfS5Wp6SPBO70SDMraZBn5V665jBJG5ZCeZj-elWULy6psuCnH/pubhtml';
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vR6MLPeWdVRJMJxk-8ND3Z-N0zuHcFZT_kZEwqOs31oYe7Rkeu0y9fkltaSsxH9TYPlcQxUkHxDTBrX/pub?gid=0&single=true&output=csv';
 
 const RADIUS_KM = 150;
 
