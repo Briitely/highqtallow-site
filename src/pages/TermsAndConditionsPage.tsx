@@ -190,26 +190,68 @@ export default function TermsAndConditionsPage() {
 
               <section>
                 <h3 className="font-display text-2xl font-bold text-midnight mb-4">
-                  5. Returns & Refunds
+                  5. Returns, Refunds & 30-Day Money-Back Guarantee
                 </h3>
                 <p className="mb-4">
-                  Due to the nature of personal care products, we do not accept returns of opened
-                  or used products.
+                  We stand behind our products and want you to feel confident trying High Q
+                  Tallow.
                 </p>
+
+                <div className="bg-warm rounded-xl p-6 mb-4">
+                  <h4 className="font-display text-xl font-bold text-sage-dark mb-3">
+                    30-Day Money-Back Guarantee
+                  </h4>
+                  <p className="mb-4">
+                    If you are not satisfied with a High Q Tallow product purchased directly from
+                    us, contact us at{' '}
+                    <a
+                      href="mailto:info@highqtallow.com"
+                      className="text-sage-dark hover:underline"
+                    >
+                      info@highqtallow.com
+                    </a>{' '}
+                    within 30 days of the date your order was delivered to request a refund.
+                  </p>
+                  <p className="mb-4">
+                    Our 30-day money-back guarantee applies even if you have opened and tried the
+                    product. You do not need to return the product to us.
+                  </p>
+                  <p className="mb-4">
+                    We may ask for your order information and feedback about your experience to
+                    help us improve our products.
+                  </p>
+                  <p className="mb-4">
+                    The guarantee is limited to the purchase price of the eligible product and
+                    applies only to purchases made directly through High Q Tallow. Original
+                    shipping charges are non-refundable.
+                  </p>
+                  <p>
+                    We reserve the right to limit or refuse guarantee claims where we reasonably
+                    believe the policy is being misused or abused.
+                  </p>
+                </div>
+
+                <h4 className="font-display text-xl font-bold text-midnight mb-3">
+                  Damaged, Defective or Incorrect Products
+                </h4>
                 <p className="mb-4">
-                  If your item arrives damaged or defective, contact us within 7 days at{' '}
+                  If your order arrives damaged, defective, or incorrect, please contact us within
+                  7 days of delivery at{' '}
                   <a
                     href="mailto:info@highqtallow.com"
                     className="text-sage-dark hover:underline"
                   >
                     info@highqtallow.com
                   </a>{' '}
-                  with photos.
+                  and include photos where applicable. We will work with you to make it right.
                 </p>
                 <p className="mb-4">
                   Approved refunds will be issued to the original payment method.
                 </p>
-                <p>Shipping fees are non-refundable unless the error was ours.</p>
+                <p>
+                  Nothing in this policy limits any rights or remedies available under applicable
+                  consumer protection laws.
+                </p>
               </section>
             </div>
           </div>
