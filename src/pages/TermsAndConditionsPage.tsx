@@ -214,16 +214,19 @@ export default function TermsAndConditionsPage() {
                   </p>
                   <p className="mb-4">
                     Our 30-day money-back guarantee applies even if you have opened and tried the
-                    product. You do not need to return the product to us.
+                    product. To qualify for a refund, the product and its original container must
+                    be returned to High Q Tallow. Customers are responsible for the cost of return
+                    shipping.
                   </p>
                   <p className="mb-4">
-                    We may ask for your order information and feedback about your experience to
-                    help us improve our products.
+                    Please contact us before returning your product so we can provide return
+                    instructions. Refunds will be processed to the original payment method after
+                    the returned product has been received.
                   </p>
                   <p className="mb-4">
                     The guarantee is limited to the purchase price of the eligible product and
-                    applies only to purchases made directly through High Q Tallow. Original
-                    shipping charges are non-refundable.
+                    applies only to purchases made directly through High Q Tallow. Original and
+                    return shipping charges are non-refundable.
                   </p>
                   <p>
                     We reserve the right to limit or refuse guarantee claims where we reasonably
