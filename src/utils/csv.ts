@@ -40,7 +40,7 @@ export function parseCSV(csvText: string): StoreLocation[] {
     }
     values.push(currentValue.trim());
 
-    if (values.length < 13) continue;
+    if (values.length < 9) continue;
 
     const name = values[0]?.trim() || '';
     const address = values[1]?.trim() || '';
@@ -52,17 +52,16 @@ export function parseCSV(csvText: string): StoreLocation[] {
 
   const rawPhone = values[7]?.trim() || '';
 const rawWebsite = values[8]?.trim() || '';
-const wholesaleStatus = values[12]?.trim() || '';
 
 const phone = formatPhone(rawPhone);
 const website = rawWebsite || undefined;
 
-// Only active wholesale retailers should appear on the public map
+// Every row in the public sheet is intentionally map-visible.
+// "Show on Map" is enforced upstream by the High Q operations portal.
 if (
   !isNaN(lat) &&
   !isNaN(lng) &&
-  name &&
-  wholesaleStatus.toLowerCase() === 'active'
+  name
 ) {
   stores.push({
     name,
