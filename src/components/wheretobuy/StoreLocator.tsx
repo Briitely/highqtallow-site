@@ -151,10 +151,10 @@ export default function StoreLocator() {
       const withinRadius = withDistances.filter((s) => s.distance! <= RADIUS_KM);
 
       if (withinRadius.length > 0) {
-        recordLocationSearch(query, withinRadius.length, withDistances[0]?.distance ?? null, 'found');
+        if (center.city && center.province) recordLocationSearch(`${center.city}, ${center.province}`, withinRadius.length, withDistances[0]?.distance ?? null, 'found');
         setResultStores(withinRadius);
       } else {
-        recordLocationSearch(query, 0, withDistances[0]?.distance ?? null, 'no_nearby');
+        if (center.city && center.province) recordLocationSearch(`${center.city}, ${center.province}`, 0, withDistances[0]?.distance ?? null, 'no_nearby');
         setResultStores(withDistances.slice(0, 10));
         setNoNearbyMessage(
           'No stores within 150km \u2014 here are the closest locations.'
