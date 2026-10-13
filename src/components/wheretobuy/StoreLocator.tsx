@@ -14,7 +14,7 @@ const RADIUS_KM = 150;
 
 // Public ingestion endpoint hosted by Wholesale Desk. No Supabase credentials in the browser.
 const RETAILER_SEARCH_API_URL = import.meta.env.VITE_RETAILER_SEARCH_API_URL as string | undefined;
-const CITY_QUERY_PATTERN = /^[\\p{L}][\\p{L} .'-]{1,79}$/u;
+const CITY_QUERY_PATTERN = /^[\p{L}][\p{L} .'-]{1,79}$/u;
 
 function recordLocationSearch(
   cityQuery: string,
