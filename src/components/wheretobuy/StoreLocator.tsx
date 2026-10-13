@@ -12,6 +12,35 @@ const STORES_CSV_URL =
 
 const RADIUS_KM = 150;
 
+// Public ingestion endpoint hosted by Wholesale Desk. No Supabase credentials in the browser.
+const RETAILER_SEARCH_API_URL = import.meta.env.VITE_RETAILER_SEARCH_API_URL as string | undefined;
+const CITY_QUERY_PATTERN = /^[\\p{L}][\\p{L} .'-]{1,79}$/u;
+
+function recordLocationSearch(
+  cityQuery: string,
+  nearbyRetailerCount: number,
+  nearestRetailerKm: number | null,
+  resultStatus: 'found' | 'no_nearby' | 'no_match'
+) {
+  if (!RETAILER_SEARCH_API_URL) return;
+  const [cityPart, provincePart] = cityQuery.split(',').map((part) => part.trim());
+  // Do not transmit free-text, addresses, contact details or retailer-name searches.
+  if (!CITY_QUERY_PATTERN.test(cityPart) || (provincePart && !CITY_QUERY_PATTERN.test(provincePart))) return;
+  void fetch(RETAILER_SEARCH_API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      city: cityPart,
+      province: provincePart || null,
+      nearbyRetailerCount,
+      nearestRetailerKm,
+      resultStatus,
+    }),
+  }).catch(() => {
+    // Analytics must never interrupt a customer's retailer search.
+  });
+}
+
 export default function StoreLocator() {
   const [searchQuery, setSearchQuery] = useState('');
   const [allStores, setAllStores] = useState<StoreLocation[]>([]);
@@ -71,6 +100,7 @@ export default function StoreLocator() {
           searched_city: cityMatches[0].city,
           matching_retailers: cityMatches.length,
         });
+        recordLocationSearch(query, cityMatches.length, 0, 'found');
         setSearchCenter(null);
         setResultStores(cityMatches);
         return;
@@ -89,6 +119,7 @@ export default function StoreLocator() {
       const center = await geocodeCity(query);
 
       if (!center) {
+        // An unresolved query is not necessarily a city; don't store it.
         setSearchCenter(null);
         setResultStores([]);
         setNoNearbyMessage('No stores found matching your search.');
@@ -107,8 +138,10 @@ export default function StoreLocator() {
       const withinRadius = withDistances.filter((s) => s.distance! <= RADIUS_KM);
 
       if (withinRadius.length > 0) {
+        recordLocationSearch(query, withinRadius.length, withDistances[0]?.distance ?? null, 'found');
         setResultStores(withinRadius);
       } else {
+        recordLocationSearch(query, 0, withDistances[0]?.distance ?? null, 'no_nearby');
         setResultStores(withDistances.slice(0, 10));
         setNoNearbyMessage(
           'No stores within 150km \u2014 here are the closest locations.'
