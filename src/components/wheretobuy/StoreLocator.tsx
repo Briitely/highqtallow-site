@@ -113,7 +113,7 @@ export default function StoreLocator() {
           searched_city: cityMatches[0].city,
           matching_retailers: cityMatches.length,
         });
-        recordLocationSearch(query, cityMatches.length, 0, 'found');
+        recordLocationSearch(`${cityMatches[0].city}, ${cityMatches[0].province}`, cityMatches.length, 0, 'found');
         setSearchCenter(null);
         setResultStores(cityMatches);
         return;
