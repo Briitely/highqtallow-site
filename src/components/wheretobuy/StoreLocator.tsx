@@ -14,7 +14,7 @@ const RADIUS_KM = 150;
 
 // Public ingestion endpoint hosted by Wholesale Desk. No Supabase credentials in the browser.
 const RETAILER_SEARCH_API_URL = import.meta.env.VITE_RETAILER_SEARCH_API_URL as string | undefined;
-const CITY_QUERY_PATTERN = /^[\\p{L}][\\p{L} .'-]{1,79}$/u;
+const CITY_QUERY_PATTERN = /^[\p{L}][\p{L} .'-]{1,79}$/u;
 
 function recordLocationSearch(
   cityQuery: string,
@@ -22,10 +22,16 @@ function recordLocationSearch(
   nearestRetailerKm: number | null,
   resultStatus: 'found' | 'no_nearby' | 'no_match'
 ) {
-  if (!RETAILER_SEARCH_API_URL) return;
+  if (!RETAILER_SEARCH_API_URL) {
+    console.warn('[Retailer tracking] API URL missing from website build.');
+    return;
+  }
   const [cityPart, provincePart] = cityQuery.split(',').map((part) => part.trim());
   // Do not transmit free-text, addresses, contact details or retailer-name searches.
-  if (!CITY_QUERY_PATTERN.test(cityPart) || (provincePart && !CITY_QUERY_PATTERN.test(provincePart))) return;
+  if (!CITY_QUERY_PATTERN.test(cityPart) || (provincePart && !CITY_QUERY_PATTERN.test(provincePart))) {
+    console.info('[Retailer tracking] Skipped non-city query.');
+    return;
+  }
   void fetch(RETAILER_SEARCH_API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -36,7 +42,11 @@ function recordLocationSearch(
       nearestRetailerKm,
       resultStatus,
     }),
-  }).catch(() => {
+  }).then((response) => {
+    if (!response.ok) console.warn('[Retailer tracking] API rejected search:', response.status);
+    else console.info('[Retailer tracking] Search accepted:', response.status);
+  }).catch((error: unknown) => {
+    console.warn('[Retailer tracking] Network request failed:', error);
     // Analytics must never interrupt a customer's retailer search.
   });
 }
@@ -79,7 +89,10 @@ export default function StoreLocator() {
 
   const handleSearch = async () => {
     const query = searchQuery.trim();
-    if (!query || allStores.length === 0) return;
+    if (!query || allStores.length === 0) {
+      console.info('[Retailer tracking] Search skipped: empty query or no loaded retailers.');
+      return;
+    }
 
     setSearching(true);
     setNoNearbyMessage(null);
